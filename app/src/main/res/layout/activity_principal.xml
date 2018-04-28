@@ -7,23 +7,216 @@
     android:background="@drawable/fundo"
     tools:context=".Principal">
 
+    <TextView
+        android:id="@+id/principal_txt-nomeperso"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Nome do personagem"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h15"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v70"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v30"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h05"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/principal_txt-atkperso"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="ataque"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h30"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v30"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v10"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h20"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/principal_txt-defperso"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="defesa"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h45"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v30"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v10"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h35"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/principal_txt-eneperso"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="energia"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h30"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v60"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v40"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h20"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/principal_txt-estperso"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="estamina"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h45"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v60"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v40"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h35"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/principal_txt-vidperso"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="life"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h30"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v90"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v70"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h20"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/principal_txt-espperso"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="especial"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h45"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v90"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v70"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h35"
+        tools:ignore="MissingPrefix" />
+
+    <Button
+        android:id="@+id/principal_btn-p1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_cinza"
+        android:text="P1"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h75"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v30"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v10"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h50"
+        tools:ignore="MissingPrefix" />
+
+    <Button
+        android:id="@+id/principal_btn-p2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_cinza"
+        android:text="P2"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h75"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v60"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v40"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h50"
+        tools:ignore="MissingPrefix" />
+
+    <Button
+        android:id="@+id/principal_btn-p3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_cinza"
+        android:text="P3"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h75"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v90"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v70"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h50"
+        tools:ignore="MissingPrefix" />
+
+    <!-- horizontal -->
     <Button
         android:id="@+id/principal_btn-play"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="Button"
-        app:autoSizeTextType="uniform"
-        app:autoSizeMinTextSize="10dp"
+        android:background="@drawable/btn_verde"
+        android:text="Play!"
+        android:textColor="@android:color/white"
         app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
         app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h95"
         app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v30"
         app:layout_constraintStart_toStartOf="@+id/principal_vertical_v05"
         app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h80"
         tools:ignore="MissingPrefix" />
 
+    <TextView
+        android:id="@+id/principal_txt-select"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Select your fighter!"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h95"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v65"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v35"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h80"
+        tools:ignore="MissingPrefix" />
 
-    <!-- horizontal -->
+    <Button
+        android:id="@+id/principal_btn-about"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_cinza"
+        android:text="About"
+        android:textColor="@android:color/white"
+        app:autoSizeMaxTextSize="24dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h95"
+        app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v95"
+        app:layout_constraintStart_toStartOf="@+id/principal_vertical_v70"
+        app:layout_constraintTop_toTopOf="@+id/principal_horizontal_h80"
+        tools:ignore="MissingPrefix" />
+
     <android.support.constraint.Guideline
         android:id="@+id/principal_horizontal_h05"
         android:layout_width="wrap_content"
@@ -170,21 +363,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10" />
+        app:layout_constraintGuide_begin="59dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/principal_vertical_v15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_begin="89dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/principal_vertical_v20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.20" />
+        app:layout_constraintGuide_begin="119dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/principal_vertical_v25"
@@ -290,5 +483,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
+
+
 
 </android.support.constraint.ConstraintLayout>
