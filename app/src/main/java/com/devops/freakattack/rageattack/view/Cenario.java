@@ -1,5 +1,6 @@
 package com.devops.freakattack.rageattack.view;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.devops.freakattack.rageattack.R;
-import com.devops.freakattack.rageattack.model.Objeto;
+import com.devops.freakattack.rageattack.modelo.Objeto;
 
 public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
@@ -17,7 +18,7 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
     private Button ataque_1 = null;
     private Button ataque_2 = null;
     private TextView vida = null;
-    private ImageView objeto = null;
+    private ImageView carro = null;
     private Objeto cenario = null;
 
     @Override
@@ -28,7 +29,7 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         ataque_1 = (Button) findViewById(R.id.ataque_1);
         ataque_2 = (Button) findViewById(R.id.ataque_2);
         vida = (TextView) findViewById(R.id.textView_vida_qtd);
-        objeto = (ImageView) findViewById(R.id.cenario_inimigo);
+        carro = (ImageView) findViewById(R.id.cenario_inimigo);
         cenario = new Objeto();
 
 
@@ -39,16 +40,45 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
 
     public void onClick(View v) {
+
         switch (v.getId()){
+
             case R.id.ataque_1:
-                vida.setText("1");
+                modificarVida(1);
+                vida.setText(Integer.toString(cenario.getVida()));
                 break;
             case R.id.ataque_2:
-                vida.setText("2");
+                modificarVida(2);
+                vida.setText(Integer.toString(cenario.getVida()));
                 break;
             default:
                 break;
 
+        }
+    }
+
+    private void modificarVida(int valor) {
+        int vida = 0;
+        switch (valor) {
+            case 1:
+                vida = cenario.getVida();
+                cenario.setVida(--vida);
+                verificarVida();
+                break;
+            case 2:
+                vida = cenario.getVida();
+                cenario.setVida(vida-2);
+                verificarVida();
+        }
+    }
+
+    public void verificarVida(){
+        if(cenario.getVida() < 30){
+            Drawable drawable= getResources().getDrawable(R.drawable.carrob);
+            carro.setImageDrawable(drawable);
+        } else if(cenario.getVida() < 70){
+            Drawable drawable= getResources().getDrawable(R.drawable.carroc);
+            carro.setImageDrawable(drawable);
         }
     }
 }
