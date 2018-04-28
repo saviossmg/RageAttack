@@ -1,6 +1,8 @@
 package com.devops.freakattack.rageattack.view;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +23,10 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
     private TextView vida = null;
     private ImageView carro = null;
     private Objeto cenario = null;
+    Bitmap bImage1 = null;
+    Bitmap bImage2 = null;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,10 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         ataque_2 = (Button) findViewById(R.id.ataque_2);
         vida = (TextView) findViewById(R.id.textView_vida_qtd);
         carro = (ImageView) findViewById(R.id.cenario_inimigo);
+
+        bImage1 = BitmapFactory.decodeResource(this.getResources(), R.drawable.carrob);
+        bImage2 = BitmapFactory.decodeResource(this.getResources(), R.drawable.carrob);
+
         cenario = new Objeto();
 
 
@@ -75,13 +85,24 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
     public void verificarVida(){
         if(cenario.getVida() < 30){
-            atualizarTela();
-            Drawable drawable= getResources().getDrawable(R.drawable.carrob);
-            carro.setImageDrawable(drawable);
-        } else if(cenario.getVida() < 70){
-            atualizarTela();
-            Drawable drawable= getResources().getDrawable(R.drawable.carroc);
-            carro.setImageDrawable(drawable);
+            //atualizarTela();
+            //Drawable drawable= getResources().getDrawable(R.drawable.carrob);
+            //carro.setImageDrawable(drawable);
+            //ImageView img= (ImageView) findViewById(R.id.image);
+            //carro.setImageResource(R.drawable.carrob);
+            //ImageView imageView = new ImageView(this);
+
+            carro.setImageResource(R.drawable.carrob);
+        } else if(cenario.getVida() < 70) {
+            //atualizarTela();
+            //Drawable drawable= getResources().getDrawable(R.drawable.carroc);
+            //carro.setImageDrawable(drawable);
+            //ImageView img= (ImageView) findViewById(R.id.image);
+            //carro.setImageResource(R.drawable.carroc);
+            //atualizarTela();
+
+            carro.setImageResource(R.drawable.carroc);;
+            //atualizarTela();
 
         }
 
