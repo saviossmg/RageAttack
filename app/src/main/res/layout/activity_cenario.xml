@@ -8,15 +8,27 @@
     tools:context=".view.Cenario">
 
     <ImageView
+        android:id="@+id/cenario_cenario"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/cenarioaa"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h60"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
         android:id="@+id/cenario_inimigo"
         android:background="@drawable/carroa"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h55"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h60"
         app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v70"
-        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v25"
-        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h15" />
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v30"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h20" />
 
+<!--
     <ImageView
         android:id="@+id/coracao1"
         android:background="@drawable/vida"
@@ -46,28 +58,142 @@
         app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v90"
         app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v85"
         app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
+    -->
 
-    <Button
-        android:id="@+id/ataque_1"
+
+    <ImageView
+        android:id="@+id/cenario-hud"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/ball_blue"
+        android:background="@color/btncinzapressed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h60" />
+
+    <ImageView
+        android:id="@+id/cenario-imgperso"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/amarelo"
         app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h95"
-        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v25"
-        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v10"
-        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h80" />
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v60"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v40"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h65" />
+
+    <TextView
+        android:id="@+id/cenario-txtvida"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="vida"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:autoSizeMaxTextSize="14dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h75"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v35"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v20"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h65"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/cenario-txtstamina"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="stamina"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:autoSizeMaxTextSize="14dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h95"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v35"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v20"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h85"
+        tools:ignore="MissingPrefix"/>
+
+    <TextView
+        android:id="@+id/cenario-txtenergia"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="stamina"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:autoSizeMaxTextSize="14dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h75"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v80"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v65"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h65"
+        tools:ignore="MissingPrefix"/>
 
     <Button
-        android:id="@+id/ataque_2"
+        android:id="@+id/cenario-btnsair"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="@drawable/btn_vermelho"
+        android:textColor="@android:color/white"
+        android:text="Sair"
+        app:autoSizeMaxTextSize="14dp"
+        app:autoSizeMinTextSize="10dp"
+        app:autoSizeStepGranularity="2dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h95"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v80"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v65"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h85"
+        tools:ignore="MissingPrefix" />
+
+    <Button
+        android:id="@+id/cenario_atkfraco"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ball_pink"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h75"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v15"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v05"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h60" />
+
+    <Button
+        android:id="@+id/cenario_atkmedio"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/ball_yellow"
         app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h95"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v15"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v05"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h80" />
+
+    <Button
+        android:id="@+id/cenario_atkforte"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ball_red"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h75"
         app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v95"
-        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v80"
-        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h80"   />
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v85"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h60" />
 
+    <Button
+        android:id="@+id/cenario_atkespecial"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ball_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h95"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v95"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v85"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h80" />
 
+    <!---->
     <android.support.constraint.Guideline
         android:id="@+id/cenario_horizontal_h05"
         android:layout_width="wrap_content"
@@ -246,8 +372,8 @@
 
     <android.support.constraint.Guideline
         android:id="@+id/cenario_vertical_v35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.35" />
 
