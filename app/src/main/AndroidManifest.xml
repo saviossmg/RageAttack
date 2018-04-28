@@ -9,14 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Principal">
+        <activity android:name=".view.Principal"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Sobre" />
-        <activity android:name=".Cenario"></activity>
+        <activity
+            android:name=".view.Sobre"
+            android:screenOrientation="landscape"
+            android:parentActivityName=".view.Principal">
+            <!-- Parent activity -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.Principal" />
+        </activity>
+        <activity
+            android:name=".view.Cenario"
+            android:screenOrientation="landscape">
+
+        </activity>
+
     </application>
 
 </manifest>
