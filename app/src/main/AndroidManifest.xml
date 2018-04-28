@@ -9,13 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".view.Principal"
             android:screenOrientation="landscape">
+=======
+        <activity android:name=".view.Principal">
+>>>>>>> 6806856f8a480b3df7d809e871dd28c5a71f182e
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity
             android:name=".view.Sobre"
             android:screenOrientation="landscape"
@@ -31,6 +36,10 @@
 
         </activity>
 
+=======
+        <activity android:name=".Sobre" />
+        <activity android:name=".view.Cenario"></activity>
+>>>>>>> 6806856f8a480b3df7d809e871dd28c5a71f182e
     </application>
 
 </manifest>
