@@ -1,10 +1,13 @@
-package com.devops.freakattack.rageattack;
+package com.devops.freakattack.rageattack.view;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.devops.freakattack.rageattack.R;
 
 public class Principal extends AppCompatActivity implements View.OnClickListener  {
 
@@ -15,11 +18,15 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     private TextView txtEspecial = null;
     private TextView txtEnergia = null;
     private TextView txtVida = null;
+
     private Button btnPersonagem1 = null;
     private Button btnPersonagem2 = null;
     private Button btnPersonagem3 = null;
     private Button btnPlay = null;
     private Button btnSobre = null;
+
+    private Intent cenario = null;
+    private Bundle dicionario = null;
 
     //variaveis de controle
     private int perso = 0;
@@ -88,7 +95,9 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
     //metodo que irá iniciar o jogo
     private void iniciaJogo(){
-        //ação
+        //cria a intent para a tela de novo jogador
+        cenario = new Intent(this, Cenario.class);
+        startActivityForResult(cenario, 1);
     }
 
     //metodo que irá mostrar o about
