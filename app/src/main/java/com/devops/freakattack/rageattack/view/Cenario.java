@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
+import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.devops.freakattack.rageattack.R;
+import com.devops.freakattack.rageattack.controlador.Dano;
 import com.devops.freakattack.rageattack.modelo.Inimigo;
 import com.devops.freakattack.rageattack.modelo.Jogador;
 import com.devops.freakattack.rageattack.modelo.Objeto;
@@ -44,6 +46,7 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
     private Jogador jog = null;
     private Inimigo adv = null;
     private ArrayList<Inimigo> inimigos = null;
+    private Dano controladorJogo = null;
 
     //
     private String pNome;
@@ -76,6 +79,7 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         pStamina = bundle.getInt("sta");
         pEnergia = bundle.getInt("ene");
         pEspecial = bundle.getInt("esp");
+        pId = bundle.getInt("id");
 
         //referencias visuais
         this.ataque_fraco = (Button) findViewById(R.id.cenario_atkfraco);
@@ -89,7 +93,10 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         this.adversario =(ImageView) findViewById(R.id.cenario_inimigo);
         this.cenario =(ImageView) findViewById(R.id.cenario_cenario);
         this.persoJogador =(ImageView) findViewById(R.id.cenario_imgperso);
+        //inicializa o controldor que retonar os dados do jogo
+        controladorJogo = new Dano(10,18,25,10,0,28);
 
+        caraNormal();
         //coloca os corações
 //        this.coracao = new  ImageView[3];
 //        coracao[0] = (ImageView) findViewById(R.id.coracao1);
@@ -107,12 +114,19 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         //inicializa as coisas
         inicializarInimigos();
         inicilizaDadosjogador();
-
+        iniciaJogo();
 
     }
 
     //inicia o jogo
     private void iniciaJogo(){
+        //escolhe o cenario
+        int cen = controladorJogo.getCenario();
+        if(cen == 1) cenario.setBackground(getResources().getDrawable(R.drawable.cenarioaa));
+        if(cen == 2) cenario.setBackground(getResources().getDrawable(R.drawable.cenariob));
+        if(cen == 3) cenario.setBackground(getResources().getDrawable(R.drawable.cenarioc));
+        if(cen == 4) cenario.setBackground(getResources().getDrawable(R.drawable.cenariod));
+        if(cen == 5) cenario.setBackground(getResources().getDrawable(R.drawable.cenarioe));
 
     }
 
@@ -138,10 +152,8 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         //
         vida.setText("Vida: "+pVida+"/"+jog.getPtsVida());
         energia.setText("Energia: "+pEnergia+"/"+jog.getPtsEnergia());
-        vida.setText("Estamina: "+pStamina+"/"+jog.getPtsEstamina());
-        if(jog.getId() == 1) persoJogador.setBackground(getResources().getDrawable(R.drawable.waldenormal));
-        if(jog.getId() == 2) persoJogador.setBackground(getResources().getDrawable(R.drawable.lokanormal));
-        if(jog.getId() == 3) persoJogador.setBackground(getResources().getDrawable(R.drawable.marquinnormal));
+        estamina.setText("Estamina: "+pStamina+"/"+jog.getPtsEstamina());
+
 
     }
 
@@ -182,23 +194,92 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
     public void vibrar(String forca){
         Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        int m = 0;
         switch (forca){
             case "fraco":
-                vibrator.vibrate(100);
+                m = 200;
+                vibrator.vibrate(m);
+                mudaReact(m);
                 break;
             case "medio":
-                vibrator.vibrate(150);
+                m = 300;
+                vibrator.vibrate(m);
+                mudaReact(m);
                 break;
             case "forte":
-                vibrator.vibrate(200);
+                m = 400;
+                vibrator.vibrate(m);
+                mudaReact(m);
                 break;
             case "especial":
-                vibrator.vibrate(300);
+                m = 600;
+                vibrator.vibrate(m);
+                mudaReact(m);
                 break;
-
-
-
         }
+
+    }
+
+    private void mudaReact(int forca){
+        //continuação do metodo anterior
+        final int milis = forca;
+        CountDownTimer d =  new CountDownTimer(milis, 1) {
+            int m = milis;
+            public void onTick(long millisUntilFinished) {
+                //formata a string conforme o tempo avança
+                mudaBotoes(false);
+                if(m == 200) caraAtaque();
+                if(m == 300) caraAtaque();
+                if(m == 400) caraAtaque();
+                if(m == 600) caraSuper();
+
+            }
+            public void onFinish() {
+                mudaBotoes(true);
+                caraNormal();
+                this.cancel();
+            }
+        };
+        d.start();
+
+    }
+
+    //metodos de mudanla
+    private void mudaBotoes(boolean ativar){
+        ataque_fraco.setEnabled(ativar);
+        ataque_medio.setEnabled(ativar);
+        ataque_forte.setEnabled(ativar);
+        ataque_especial.setEnabled(ativar);
+    }
+
+    private void caraNormal(){
+        if(pId == 1) persoJogador.setBackground(getResources().getDrawable(R.drawable.waldenormal));
+        if(pId == 2) persoJogador.setBackground(getResources().getDrawable(R.drawable.lokanormal));
+        if(pId == 3) persoJogador.setBackground(getResources().getDrawable(R.drawable.marquinnormal));
+    }
+
+    private void caraAtaque(){
+        if(pId == 1) persoJogador.setBackground(getResources().getDrawable(R.drawable.walderataque));
+        if(pId == 2) persoJogador.setBackground(getResources().getDrawable(R.drawable.lokaataque));
+        if(pId == 3) persoJogador.setBackground(getResources().getDrawable(R.drawable.marquinataque));
+    }
+
+    private void caraSuper(){
+        if(pId == 1) persoJogador.setBackground(getResources().getDrawable(R.drawable.waldersuper));
+        if(pId == 2) persoJogador.setBackground(getResources().getDrawable(R.drawable.lokasuper));
+        if(pId == 3) persoJogador.setBackground(getResources().getDrawable(R.drawable.marquinsuper));
+    }
+
+    private void caraDano(){
+        if(pId == 1) persoJogador.setBackground(getResources().getDrawable(R.drawable.walderdano));
+        if(pId == 2) persoJogador.setBackground(getResources().getDrawable(R.drawable.lokadano));
+        if(pId == 3) persoJogador.setBackground(getResources().getDrawable(R.drawable.marquindano));
+    }
+
+    private void caraPosdano(){
+        if(pId == 1) persoJogador.setBackground(getResources().getDrawable(R.drawable.walderposdano));
+        if(pId == 2) persoJogador.setBackground(getResources().getDrawable(R.drawable.lokaposdano));
+        if(pId == 3) persoJogador.setBackground(getResources().getDrawable(R.drawable.marquinposdano));
 
     }
 

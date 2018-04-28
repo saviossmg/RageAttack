@@ -82,4 +82,10 @@ public class Dano {
         return defesaCalculada;
     }
 
+    //escolhe o cenario
+    public int getCenario(){
+        gerador = new Random();
+        return gerador.nextInt(5)+1;
+    }
+
 }
