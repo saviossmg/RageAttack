@@ -1,5 +1,6 @@
 package com.devops.freakattack.rageattack.view;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -74,11 +75,22 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
     public void verificarVida(){
         if(cenario.getVida() < 30){
+            atualizarTela();
             Drawable drawable= getResources().getDrawable(R.drawable.carrob);
             carro.setImageDrawable(drawable);
         } else if(cenario.getVida() < 70){
+            atualizarTela();
             Drawable drawable= getResources().getDrawable(R.drawable.carroc);
             carro.setImageDrawable(drawable);
+
         }
+
+    }
+
+
+    public void atualizarTela(){
+        Intent refresh = new Intent(this, Cenario.class);
+        startActivity(refresh);
+        this.finish(); //
     }
 }
