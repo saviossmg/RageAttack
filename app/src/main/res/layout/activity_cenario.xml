@@ -17,6 +17,36 @@
         app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v25"
         app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h15" />
 
+    <ImageView
+        android:id="@+id/coracao1"
+        android:background="@drawable/vida"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h15"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v85"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v80"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
+
+    <ImageView
+        android:id="@+id/coracao2"
+        android:background="@drawable/vida"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h15"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v95"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v90"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
+
+    <ImageView
+        android:id="@+id/coracao3"
+        android:background="@drawable/vida"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h15"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v90"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v85"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
+
     <Button
         android:id="@+id/ataque_1"
         android:layout_width="0dp"
@@ -36,30 +66,6 @@
         app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v95"
         app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v80"
         app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h80"   />
-
-
-    <TextView
-        android:id="@+id/textView_vida"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="VIDA:"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h15"
-        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v90"
-        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v80"
-        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
-
-    <TextView
-        android:id="@+id/textView_vida-qtd"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="100"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h15"
-        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v95"
-        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v90"
-        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
-
 
 
     <android.support.constraint.Guideline
