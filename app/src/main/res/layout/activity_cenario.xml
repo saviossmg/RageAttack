@@ -5,17 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundo"
-    tools:context=".Cenario">
+    tools:context=".view.Cenario">
 
     <ImageView
         android:id="@+id/cenario_inimigo"
         android:background="@drawable/carroa"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h65"
-        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v90"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h55"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v70"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v25"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h15" />
+
+    <Button
+        android:id="@+id/ataque_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ball_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h95"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v25"
         app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v10"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h80" />
+
+    <Button
+        android:id="@+id/ataque_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ball_yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h95"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v95"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v80"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h80"   />
+
+
+    <TextView
+        android:id="@+id/textView_vida"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="VIDA:"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h15"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v90"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v80"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
+
+    <TextView
+        android:id="@+id/textView_vida-qtd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="100"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/cenario_horizontal_h15"
+        app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v95"
+        app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v90"
+        app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
 
     <!-- horizontal -->
     <ImageView
@@ -290,5 +333,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
+
+
+
 
 </android.support.constraint.ConstraintLayout>
