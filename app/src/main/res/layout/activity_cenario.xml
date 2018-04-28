@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v30"
         app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h20" />
 
-<!--
+
     <ImageView
         android:id="@+id/coracao1"
         android:background="@drawable/vida"
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="@+id/cenario_vertical_v90"
         app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v85"
         app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
-    -->
+
 
 
     <ImageView

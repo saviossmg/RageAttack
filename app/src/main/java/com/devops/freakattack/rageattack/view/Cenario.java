@@ -38,13 +38,15 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
     private ImageView cenario = null;
     private ImageView persoJogador = null;
     private ImageView[] statusJogador = null;
-//    private ImageView[] coracao = null;
+    private ImageView[] coracao = null;
 
     private AlertDialog alerta;
 
     //objetos necessarios
     private Jogador jog = null;
     private Inimigo adv = null;
+    private Inimigo carro = null;
+    private Inimigo heli = null;
     private ArrayList<Inimigo> inimigos = null;
     private Dano controladorJogo = null;
 
@@ -59,7 +61,9 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
     private int pId;
 
     //
-    private int rodizio = 0;
+    private int rodizio = 1;
+
+    int pos = 0;
 
     public MediaPlayer mp;
 
@@ -98,10 +102,10 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
         caraNormal();
         //coloca os corações
-//        this.coracao = new  ImageView[3];
-//        coracao[0] = (ImageView) findViewById(R.id.coracao1);
-//        coracao[1] = (ImageView) findViewById(R.id.coracao2);
-//        coracao[2] = (ImageView) findViewById(R.id.coracao3);
+        this.coracao = new  ImageView[3];
+        coracao[0] = (ImageView) findViewById(R.id.coracao1);
+        coracao[1] = (ImageView) findViewById(R.id.coracao2);
+        coracao[2] = (ImageView) findViewById(R.id.coracao3);
 
         //clicklistener
         ataque_fraco.setOnClickListener(this);
@@ -128,14 +132,27 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         if(cen == 4) cenario.setBackground(getResources().getDrawable(R.drawable.cenariod));
         if(cen == 5) cenario.setBackground(getResources().getDrawable(R.drawable.cenarioe));
 
+        //
+
+        if(rodizio % 2 == 0){
+            pos = 1;
+            adversario.setBackground(getResources().getDrawable(R.drawable.helicoptera));
+        }else{
+            pos = 0;
+            adversario.setBackground(getResources().getDrawable(R.drawable.carroa));
+        }
+        pos++;
+
     }
 
     private void inicializarInimigos(){
         this.inimigos = new ArrayList<>();
         //cria o inimigo e adiciona no arryalist
         adv = new Inimigo(1,"Carro",50,20,10);
+        carro = new Inimigo(1,"Carro",50,20,10);
         this.inimigos.add(adv);
-        adv = new Inimigo(2,"Helicoptero",80,10,30);
+        adv = new Inimigo(2,"Helicoptero",70,10,30);
+        heli = new Inimigo(2,"Helicoptero",70,10, 30);
         this.inimigos.add(adv);
     }
 
@@ -165,6 +182,8 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 //                modificarVida(1);
 //                vida.setText(Integer.toString(cenario.getVida()));
                 vibrar("fraco");
+                int dano = controladorJogo.getDanoataque("fraco", jog);
+                modificarVida(1, dano);
                 break;
             case R.id.cenario_atkmedio:
                 //ação
@@ -283,37 +302,39 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-/*
-    private void modificarVida(int valor) {
+
+    private void modificarVida(int opcao, int dano) {
         int vida = 0;
-        switch (valor) {
-            case 1:
-                vida = cenario.getVida();
-                cenario.setVida(--vida);
-                verificarVida();
-                break;
-            case 2:
-                vida = cenario.getVida();
-                cenario.setVida(vida-2);
-                verificarVida();
+        if(dano > 0){
+
+            Inimigo aux = inimigos.get(pos);
+            vida = aux.getPtsVida() - dano;
+            inimigos.get(pos).setPtsVida(vida);
+
+            verificarVida(inimigos.get(pos));
         }
+
     }
 
-    public void verificarVida(){
-        if(cenario.getVida() < 0) {
+    public void verificarVida(Inimigo ene){
+
+        if(ene.getPtsVida() <= 0) {
             coracao[1].setVisibility(View.INVISIBLE);
             fimFase();
         }
-        else if(cenario.getVida() < 30) {
-            carro.setBackground(getResources().getDrawable(R.drawable.carroc));
+        else if(ene.getPtsVida() <= 15) {
+            if(ene.getId() == 1) adversario.setBackground(getResources().getDrawable(R.drawable.carroc));
+            if(ene.getId() == 2) adversario.setBackground(getResources().getDrawable(R.drawable.helicopterc));
             coracao[2].setVisibility(View.INVISIBLE);
         }
-        else if(cenario.getVida() < 70) {
+        else if(ene.getPtsVida() <= 32) {
+            if(ene.getId() == 1) adversario.setBackground(getResources().getDrawable(R.drawable.carrob));
+            if(ene.getId() == 2) adversario.setBackground(getResources().getDrawable(R.drawable.helicopterb));
             coracao[0].setVisibility(View.INVISIBLE);
-            carro.setBackground(getResources().getDrawable(R.drawable.carrob));
+
         }
     }
-*/
+
 
     private void fimFase() {
         //Cria o gerador do AlertDialog
@@ -327,6 +348,7 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         alerta = builder.create();
         //Exibe
         alerta.show();
+        iniciaJogo();
     }
 
 }
