@@ -155,6 +155,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         dicionario.putInt("ene", jogadores.get(perso).getPtsEnergia());
         dicionario.putInt("hp", jogadores.get(perso).getPtsVida());
         dicionario.putInt("esp", jogadores.get(perso).getPtsEspecial());
+        dicionario.putInt("id", jogadores.get(perso).getId());
         //cria uma intenção e solicita a troca de telas
         solicitacao = new Intent(this, Cenario.class);
         //Dicionario de dados

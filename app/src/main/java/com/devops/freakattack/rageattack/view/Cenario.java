@@ -53,6 +53,10 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
     private int pStamina;
     private int pEnergia;
     private int pEspecial;
+    private int pId;
+
+    //
+    private int rodizio = 0;
 
     public MediaPlayer mp;
 
@@ -99,10 +103,49 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         ataque_especial.setOnClickListener(this);
         sair.setOnClickListener(this);
 
-        vida.setText(pNome);
+
+        //inicializa as coisas
+        inicializarInimigos();
+        inicilizaDadosjogador();
+
 
     }
 
+    //inicia o jogo
+    private void iniciaJogo(){
+
+    }
+
+    private void inicializarInimigos(){
+        this.inimigos = new ArrayList<>();
+        //cria o inimigo e adiciona no arryalist
+        adv = new Inimigo(1,"Carro",50,20,10);
+        this.inimigos.add(adv);
+        adv = new Inimigo(2,"Helicoptero",80,10,30);
+        this.inimigos.add(adv);
+    }
+
+    private void inicilizaDadosjogador(){
+        jog = new Jogador();
+        jog.setNome(pNome);
+        jog.setPtsAtaque(pAtaque);
+        jog.setPtsDefesa(pDefesa);
+        jog.setPtsEnergia(pEnergia);
+        jog.setPtsEspecial(pEspecial);
+        jog.setPtsEstamina(pStamina);
+        jog.setPtsVida(pVida);
+        jog.setId(pId);
+        //
+        vida.setText("Vida: "+pVida+"/"+jog.getPtsVida());
+        energia.setText("Energia: "+pEnergia+"/"+jog.getPtsEnergia());
+        vida.setText("Estamina: "+pStamina+"/"+jog.getPtsEstamina());
+        if(jog.getId() == 1) persoJogador.setBackground(getResources().getDrawable(R.drawable.waldenormal));
+        if(jog.getId() == 2) persoJogador.setBackground(getResources().getDrawable(R.drawable.lokanormal));
+        if(jog.getId() == 3) persoJogador.setBackground(getResources().getDrawable(R.drawable.marquinnormal));
+
+    }
+
+    //clique dos botoes
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.cenario_atkfraco:
@@ -197,7 +240,7 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         //define o titulo
         builder.setTitle("Destruído!");
         //define a mensagem
-        builder.setMessage("Veiculo totalmente destruído. Próxima Fase !");
+        builder.setMessage("Veiculo totalmente destruído. Próxima a caminho !");
         //define um botão como positivo
         //cria o AlertDialog
         alerta = builder.create();
