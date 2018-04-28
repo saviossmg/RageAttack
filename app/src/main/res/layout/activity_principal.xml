@@ -130,8 +130,7 @@
         android:id="@+id/principal_btn-p1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/btn_cinza"
-        android:text="P1"
+        android:background="@drawable/waldenormal"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h75"
         app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v30"
@@ -143,8 +142,7 @@
         android:id="@+id/principal_btn-p2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/btn_cinza"
-        android:text="P2"
+        android:background="@drawable/lokanormal"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h75"
         app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v60"
@@ -156,8 +154,7 @@
         android:id="@+id/principal_btn-p3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/btn_cinza"
-        android:text="P3"
+        android:background="@drawable/marquinnormal"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/principal_horizontal_h75"
         app:layout_constraintEnd_toEndOf="@+id/principal_vertical_v90"
@@ -363,21 +360,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="59dp" />
+        app:layout_constraintGuide_percent="0.10" />
 
     <android.support.constraint.Guideline
         android:id="@+id/principal_vertical_v15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="89dp" />
+        app:layout_constraintGuide_percent="0.15" />
 
     <android.support.constraint.Guideline
         android:id="@+id/principal_vertical_v20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="119dp" />
+        app:layout_constraintGuide_percent="0.20" />
 
     <android.support.constraint.Guideline
         android:id="@+id/principal_vertical_v25"
@@ -483,7 +480,5 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
-
-
 
 </android.support.constraint.ConstraintLayout>

@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.devops.freakattack.rageattack.R;
+import com.devops.freakattack.rageattack.modelo.Jogador;
+
+import java.util.ArrayList;
 
 public class Principal extends AppCompatActivity implements View.OnClickListener  {
 
@@ -31,6 +34,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     //variaveis de controle
     private int perso = 0;
 
+    private ArrayList<Jogador> jogadores = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +68,9 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
         this.btnPersonagem3.setOnClickListener(this);
         this.btnPlay.setOnClickListener(this);
         this.btnSobre.setOnClickListener(this);
+
+        //carrega o array list
+
 
     }
 
@@ -103,6 +110,11 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
     //metodo que irá mostrar o about
     private void mostraAbout(){
         //ação
+    }
+
+    private void carregaJogadores(){
+        this.jogadores = new ArrayList<>();
+        //Jogador aux = new Jogador(1,);
     }
 
 }
