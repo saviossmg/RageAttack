@@ -60,12 +60,7 @@
         app:layout_constraintStart_toStartOf="@+id/cenario_vertical_v90"
         app:layout_constraintTop_toTopOf="@+id/cenario_horizontal_h10" />
 
-    <!-- horizontal -->
-    <ImageView
-        android:id="@+id/cenario_inimigo_backgroud"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:color/background_dark" />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/cenario_horizontal_h05"
