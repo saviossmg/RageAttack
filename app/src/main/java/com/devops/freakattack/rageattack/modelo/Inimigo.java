@@ -6,17 +6,18 @@ public class Inimigo {
     private String nome;
     private int ptsVida;
     private int ptsDefesa;
+    private int ptsAtaque;
 
     public Inimigo(){
 
     }
 
-
-    public Inimigo(int id, String nome, int ptsVida, int ptsDefesa) {
+    public Inimigo(int id, String nome, int ptsVida, int ptsDefesa, int ptsAtaque) {
         this.id = id;
         this.nome = nome;
         this.ptsVida = ptsVida;
         this.ptsDefesa = ptsDefesa;
+        this.ptsAtaque = ptsAtaque;
     }
 
     public int getId() {
@@ -49,5 +50,13 @@ public class Inimigo {
 
     public void setPtsDefesa(int ptsDefesa) {
         this.ptsDefesa = ptsDefesa;
+    }
+
+    public int getPtsAtaque() {
+        return ptsAtaque;
+    }
+
+    public void setPtsAtaque(int ptsAtaque) {
+        this.ptsAtaque = ptsAtaque;
     }
 }

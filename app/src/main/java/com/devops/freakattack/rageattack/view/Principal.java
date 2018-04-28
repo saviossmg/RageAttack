@@ -174,7 +174,7 @@ public class Principal extends AppCompatActivity implements View.OnClickListener
 
     private void carregaJogadores(){
         this.jogadores = new ArrayList<>();
-        Jogador aux = new Jogador(1,"Sr. Waldemar",86,46,98,68,97,5);
+        Jogador aux = new Jogador(1,"Lobei",86,46,98,68,97,5);
         this.jogadores.add(aux);
         aux = new Jogador(2,"Loka",44,99,29,80,38,10);
         this.jogadores.add(aux);
