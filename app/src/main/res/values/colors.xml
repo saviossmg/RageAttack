@@ -3,4 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="btnvermelho">#bbde1a1a</color>
+    <color name="btnvermelhopressed">#bb7b1010</color>
+    <color name="fundobranco">#41ffffff</color>
+    <color name="btnverde">#bb2f910f</color>
+    <color name="btnverdepressed">#bb21600c</color>
+    <color name="btncinza">#bb949494</color>
+    <color name="btncinzapressed">#bb696969</color>
+    <color name="btnamarelo">#bbe2e619</color>
+    <color name="btnamarelopressed">#bba1a40f</color>
+    <color name="amarelo">#f1f50e</color>
+    <color name="vermelho">#f50e0e</color>
 </resources>
