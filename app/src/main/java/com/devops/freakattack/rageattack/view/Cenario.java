@@ -32,6 +32,8 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
     private AlertDialog alerta;
 
+    private ImageView[] coracao = null;
+
     public MediaPlayer mp;
 
     @Override
@@ -41,10 +43,12 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
         //referencias visuais
         ataque_1 = (Button) findViewById(R.id.ataque_1);
         ataque_2 = (Button) findViewById(R.id.ataque_2);
-        vida = (TextView) findViewById(R.id.textView_vida_qtd);
         carro = (ImageView) findViewById(R.id.cenario_inimigo);
         cenario = new Objeto();
-
+        coracao = new  ImageView[3];
+        coracao[0] = (ImageView) findViewById(R.id.coracao1);
+        coracao[1] = (ImageView) findViewById(R.id.coracao2);
+        coracao[2] = (ImageView) findViewById(R.id.coracao3);
 
 
         //clicklistener
@@ -60,12 +64,12 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.ataque_1:
                 modificarVida(1);
-                vida.setText(Integer.toString(cenario.getVida()));
+//                vida.setText(Integer.toString(cenario.getVida()));
                 vibrar();
                 break;
             case R.id.ataque_2:
                 modificarVida(2);
-                vida.setText(Integer.toString(cenario.getVida()));
+//                vida.setText(Integer.toString(cenario.getVida()));
                 vibrar();
                 break;
             default:
@@ -96,13 +100,18 @@ public class Cenario extends AppCompatActivity implements View.OnClickListener {
 
     public void verificarVida(){
 
-        if(cenario.getVida() < 0)
+        if(cenario.getVida() < 0) {
+            coracao[1].setVisibility(View.INVISIBLE);
             fimFase();
-        else if(cenario.getVida() < 30)
+        }
+        else if(cenario.getVida() < 30) {
             carro.setBackground(getResources().getDrawable(R.drawable.carroc));
-        else if(cenario.getVida() < 70)
+            coracao[2].setVisibility(View.INVISIBLE);
+        }
+        else if(cenario.getVida() < 70) {
+            coracao[0].setVisibility(View.INVISIBLE);
             carro.setBackground(getResources().getDrawable(R.drawable.carrob));
-
+        }
 
     }
 
